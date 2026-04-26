@@ -79,7 +79,7 @@ Low-quality spots and rarely detected genes are removed based on:
 - maximum total counts
 - mitochondrial percentage
 - minimum number of spots per gene
-- 
+
 ## 7. Normalize and find highly variable genes
 
 The data is:
@@ -157,6 +157,87 @@ The same standard workflow is applied to the second dataset:
 The final results for the second dataset are visualized in:
 - UMAP space
 - spatial coordinate space
+
+---
+
+# Notebook 2: Analyze Visium Fluorescence Data
+
+This notebook demonstrates how to analyze **10x Genomics Visium fluorescence data** using **Squidpy**.  
+The workflow includes loading spatial transcriptomics data, visualizing clusters and fluorescence channels, segmenting nuclei, extracting image-derived features, and comparing image-based clustering with gene-expression-based clustering.
+
+---
+
+## Overview
+
+The analysis follows this workflow:
+
+1. Import packages and load the dataset  
+2. Plot spatial clusters  
+3. Show fluorescence channels  
+4. Smooth and segment the image  
+5. Extract segmentation features  
+6. Extract multi-scale image features  
+7. Define feature clustering function  
+8. Cluster spots by image features  
+
+---
+
+## Dataset
+
+This example uses a **preprocessed crop** of a **mouse brain Visium fluorescence dataset** provided through Squidpy datasets.
+
+- `img`: fluorescence image stored as a Squidpy `ImageContainer`
+- `adata`: spatial transcriptomics data stored as an `AnnData` object
+
+The fluorescence image includes multiple channels used for downstream visualization and segmentation.
+
+---
+
+## Requirements
+
+Install the main dependencies before running the notebook:
+
+- squidpy
+- scanpy
+- anndata
+- pandas
+- matplotlib
+
+---
+
+## 1. Import packages and load data
+
+This step imports the required libraries and loads the image and AnnData objects used throughout the notebook.
+
+## 2. Plot spatial clusters
+
+This plot shows the annotated transcriptomic clusters in their spatial tissue coordinates.
+
+## 3. Show fluorescence channels
+
+This visualization displays the individual fluorescence channels separately.
+
+## 4. Smooth and segment the image
+
+The image is first smoothed to reduce noise, then watershed segmentation is applied on channel 0.  
+A cropped region is displayed to compare the raw image and segmentation result.
+
+## 5. Extract segmentation features
+
+Segmentation-based features are computed for each spot using the segmented image.  
+These features can then be compared with gene-expression-based clusters.
+
+## 6. Extract multi-scale image features
+
+This step computes summary, histogram, and texture features at different scales and contexts, then combines them into one feature table.
+
+## 7. Define feature clustering function
+
+A helper function is defined to cluster selected image features using scaling, PCA, neighborhood graph construction, and Leiden clustering.
+
+## 8. Cluster spots by image features
+
+This final step clusters spots separately using summary, histogram, and texture features, and compares the resulting image-based clusters with the original transcriptomic clusters.
 
 ---
 
