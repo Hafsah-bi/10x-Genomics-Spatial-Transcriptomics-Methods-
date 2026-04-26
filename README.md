@@ -1,6 +1,24 @@
 # 10x-Genomics-Spatial-Transcriptomics-Methods
 The repository covers spatial transcriptomics using Scanpy and Squidpy across four tutorials. It analyzes 10x Genomics Visium (H&amp;E &amp; fluorescence) and Xenium data, covering QC, clustering, image feature extraction, spatial statistics, and tissue visualization.
 
+## Repository Structure
+
+```
+10x-genomics-spatial/
+│
+├── 1. Basic Scanpy Spatial Analysis/                       
+├── 2. Analyze Visium fluorescence data/               
+├── 3. Analyze Visium H&E data/                
+├── 4. Analyze Xenium data/                     
+result
+│
+├── 1. Basic Scanpy Spatial Analysis/                       
+├── 2. Analyze Visium fluorescence data/               
+├── 3. Analyze Visium H&E data/                
+├── 4. Analyze Xenium data/        
+README.md                      
+```
+
 # Notebook 1: Basic Scanpy Spatial Analysis
 
 This notebook demonstrates a basic **spatial transcriptomics workflow** in **Scanpy**. It first analyzes a **10x Visium human lymph node** dataset and then applies a similar workflow to a second dataset with manually added spatial coordinates.
