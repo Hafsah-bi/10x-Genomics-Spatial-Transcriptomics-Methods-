@@ -241,6 +241,96 @@ This final step clusters spots separately using summary, histogram, and texture 
 
 ---
 
+# Notebook 3: Analyze Visium H&E Data
+
+This notebook shows how to analyze **10x Genomics Visium H&E spatial transcriptomics data** with **Squidpy** by combining spatial gene expression, tissue image features, neighborhood analysis, ligand-receptor analysis, and spatial autocorrelation.
+
+---
+
+## Overview
+
+The workflow in this notebook includes:
+
+1. Import packages and load data  
+2. Plot spatial clusters  
+3. Extract summary image features at multiple scales  
+4. Cluster spots using image features  
+5. Build the spatial neighbor graph and test neighborhood enrichment  
+6. Analyze cluster co-occurrence  
+7. Perform ligand-receptor interaction analysis  
+8. Compute spatial autocorrelation of genes  
+9. View top Moran’s I results  
+10. Plot spatially variable genes  
+
+---
+
+## Dataset
+
+This example uses a **preprocessed Visium H&E mouse brain dataset** provided through Squidpy.
+
+- `img`: H&E tissue image stored as a Squidpy `ImageContainer`
+- `adata`: spatial transcriptomics dataset stored as an `AnnData` object
+
+The dataset includes pre-annotated clusters and associated histology image data.
+
+---
+
+## Requirements
+
+Install the main dependencies before running the notebook:
+
+- squidpy
+- scanpy
+- anndata
+- numpy
+- pandas
+
+---
+
+## 1. Import packages and load data
+
+This step imports the required libraries and loads the H&E image and the preprocessed spatial transcriptomics dataset.
+
+## 2. Plot spatial clusters
+
+This plot shows the annotated gene-expression clusters in their spatial tissue coordinates.
+
+## 3. Extract summary image features at multiple scales
+
+This step computes summary image features for each spot at multiple scales to capture both local and broader tissue context.  
+The extracted feature tables are then combined into a single matrix for downstream analysis.
+
+## 4. Cluster spots using image features
+
+A helper function is used to cluster spots based on the extracted image features using scaling, PCA, neighbor graph construction, and Leiden clustering.  
+The resulting image-based clusters are compared with gene-expression-based clusters.
+
+## 5. Build the spatial neighbor graph and test neighborhood enrichment
+
+This step constructs the spatial connectivity graph between spots and tests whether certain clusters are located near each other more often than expected.
+
+## 6. Analyze cluster co-occurrence
+
+This analysis measures how frequently one cluster appears near another across spatial distances, helping reveal spatial organization patterns between tissue regions.
+
+## 7. Perform ligand-receptor interaction analysis
+
+This step identifies potential cell-cell communication signals between clusters using ligand-receptor expression analysis and highlights interactions between selected source and target groups.
+
+## 8. Compute spatial autocorrelation of genes
+
+This analysis calculates Moran’s I for highly variable genes to identify genes with spatially structured expression patterns.
+
+## 9. View top Moran’s I results
+
+This step displays the top-ranked genes based on Moran’s I statistics.
+
+## 10. Plot spatially variable genes
+
+This plot visualizes selected spatially variable genes together with the cluster map to compare expression patterns across tissue regions.
+
+---
+
 ## References
 
 [Scanpy spatial tutorial](https://scanpy-tutorials.readthedocs.io/en/latest/spatial/basic-analysis.html)
