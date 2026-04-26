@@ -461,6 +461,14 @@ This step imports the required libraries and loads the H&E image and the preproc
 
 This plot shows the annotated gene-expression clusters in their spatial tissue coordinates.
 
+![Spatial Domain Map](results/Analyze%20Visium%20H%26E%20data/1.%20Spatial%20Domain%20Map.png)
+> *Figure 20. Spatial domain map of the H&E-based Visium tissue section, showing annotated anatomical regions across the sampled coordinates.*
+
+**Key observations**
+- Multiple anatomical domains, including **cortical layers, hippocampal regions, thalamic areas, and ventricles**, are resolved spatially.
+- The domains form **structured and biologically coherent spatial patterns** consistent with tissue architecture.
+
+
 ## 3. Extract summary image features at multiple scales
 
 This step computes summary image features for each spot at multiple scales to capture both local and broader tissue context.  
@@ -471,13 +479,34 @@ The extracted feature tables are then combined into a single matrix for downstre
 A helper function is used to cluster spots based on the extracted image features using scaling, PCA, neighbor graph construction, and Leiden clustering.  
 The resulting image-based clusters are compared with gene-expression-based clusters.
 
+![Feature Clusters and Tissue Domains](results/Analyze%20Visium%20H%26E%20data/2.%20Feature%20Clusters%20and%20Tissue%20Domains.png)
+> *Figure 21. Side-by-side comparison of unsupervised feature-based clusters and annotated tissue domains in the H&E-based Visium section, illustrating how image-derived patterns relate to anatomical structure.*
+
+**Key observations**
+- Feature-derived clusters show **partial alignment with annotated anatomical domains**, indicating that image features capture meaningful tissue organization.
+- Differences between the two maps highlight **both correspondence and additional heterogeneity** beyond manual or reference-based domain labels.
+
 ## 5. Build the spatial neighbor graph and test neighborhood enrichment
 
 This step constructs the spatial connectivity graph between spots and tests whether certain clusters are located near each other more often than expected.
 
+![Neighborhood Enrichment](results/Analyze%20Visium%20H%26E%20data/3.%20Neighborhood%20Enrichment.png)
+> *Figure 22. Neighborhood enrichment heatmap showing preferential spatial adjacency relationships among annotated tissue domains in the H&E-based Visium section.*
+
+**Key observations**
+- Strong **diagonal enrichment** indicates that many domains preferentially neighbor spots of the same label, consistent with spatial continuity.
+- Off-diagonal signals reveal **selective interactions between specific neighboring regions**, reflecting organized anatomical transitions across the tissue.
+
 ## 6. Analyze cluster co-occurrence
 
 This analysis measures how frequently one cluster appears near another across spatial distances, helping reveal spatial organization patterns between tissue regions.
+
+![Hippocampus Interaction Profile](results/Analyze%20Visium%20H%26E%20data/4.%20Hippocampus%20Interaction%20Profile.png)
+> *Figure 23. Distance-dependent interaction profile centered on the hippocampus, showing how spatial association with other tissue domains changes across increasing distance.*
+
+**Key observations**
+- The **hippocampus and closely related neighboring domains** show the strongest interaction signal at short distances.
+- Interaction strengths generally **decrease and converge with distance**, indicating more localized spatial organization around the hippocampal region.
 
 ## 7. Perform ligand-receptor interaction analysis
 
@@ -494,6 +523,13 @@ This step displays the top-ranked genes based on Moran’s I statistics.
 ## 10. Plot spatially variable genes
 
 This plot visualizes selected spatially variable genes together with the cluster map to compare expression patterns across tissue regions.
+
+![Spatial Marker Gene Expression](results/Analyze%20Visium%20H%26E%20data/5.%20Spatial%20Marker%20Gene%20Expression.png)
+> *Figure 24. Spatial expression patterns of selected marker genes alongside annotated tissue domains, showing how gene localization corresponds to anatomical structure in the H&E-based Visium section.*
+
+**Key observations**
+- Marker genes display **region-specific spatial enrichment**, with expression concentrated in distinct anatomical areas rather than uniformly across the tissue.
+- Comparing gene maps with the domain annotation shows that **molecular expression patterns align with major tissue compartments** and help support regional identity.
 
 ---
 
