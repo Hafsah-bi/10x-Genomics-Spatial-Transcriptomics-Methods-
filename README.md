@@ -195,6 +195,16 @@ A selected marker gene is visualized together with cluster labels to help interp
 
 Additional genes are plotted in tissue space to compare their spatial expression patterns across the sample.
 
+![Spatial COL1A2 and SYPL1](results/Basic%20Scanpy%20Spatial%20Analysis/8.%20Spatial%20COL1A2%20and%20SYPL1.png)
+> *Figure 8. Spatial expression of COL1A2 and SYPL1 across the tissue section, highlighting gene-specific localization patterns.*
+
+**Key observations**
+- Both genes show **spatially heterogeneous expression** across the tissue.
+- **COL1A2** appears enriched in more localized regions, suggesting restricted spatial expression.
+- **SYPL1** shows a broader but still non-uniform distribution.
+- The differing patterns indicate **distinct biological roles or tissue-associated domains**.
+
+
 ## 16. Import AnnData directly
 
 The `anndata` package is imported so a second spatial dataset can be created manually.
@@ -227,6 +237,24 @@ The same standard workflow is applied to the second dataset:
 The final results for the second dataset are visualized in:
 - UMAP space
 - spatial coordinate space
+
+![UMAP Clusters](results/Basic%20Scanpy%20Spatial%20Analysis/9.%20UMAP%20Clusters.png)
+> *Figure 9. UMAP projection of spots/cells colored by cluster identity, showing the transcriptional structure of the dataset.*
+
+**Key observations**
+- The UMAP reveals **six distinct clusters** with varying degrees of separation.
+- Some clusters are **well separated**, indicating strong transcriptional differences.
+- Other clusters lie closer together, suggesting **related expression profiles** or gradual transitions.
+- The projection supports the presence of **meaningful transcriptional heterogeneity** in the dataset.
+
+![Spatial Cluster Map](results/Basic%20Scanpy%20Spatial%20Analysis/10.%20Spatial%20Cluster%20Map.png)
+> *Figure 10. Spatial distribution of cluster identities across the tissue coordinates, illustrating how transcriptional clusters are arranged in physical space.*
+
+**Key observations**
+- The map shows **six spatially distributed clusters** across the tissue area.
+- Some clusters form **localized neighborhoods**, while others are more dispersed.
+- The mixed distribution suggests **spatial heterogeneity** rather than strict segregation.
+- This view helps relate **transcriptional clustering to tissue organization**.
 
 ---
 
