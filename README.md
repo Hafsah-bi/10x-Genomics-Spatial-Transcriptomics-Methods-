@@ -72,7 +72,7 @@ Histograms are used to inspect:
 
 These plots help choose appropriate filtering thresholds.
 
-![QC Histograms](results/Basic Scanpy Spatial Analysis/1. qc_histograms.png)
+![QC Histograms](results/Basic Scanpy Spatial Analysis/1. qc_histograms)
 > *Figure 1. Histograms of total counts and detected genes per spot/cell used for initial quality control assessment. Full-range and zoomed-in views are shown to highlight the overall distribution and potential filtering thresholds.*
 
 **Key observations**
