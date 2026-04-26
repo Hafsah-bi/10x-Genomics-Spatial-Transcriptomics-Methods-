@@ -168,9 +168,28 @@ Specific clusters are highlighted in a cropped tissue region to examine local sp
 
 Differential expression analysis is used to identify genes that are enriched in specific clusters.
 
+![Marker genes heatmap](results/Basic%20Scanpy%20Spatial%20Analysis/6.%20marker_genes_heatmap.png)
+> *Figure 6. Heatmap of representative marker genes across clusters, showing differential expression patterns and similarity relationships among cluster identities.*
+
+**Key observations**
+- Marker genes show **cluster-specific expression patterns** across the dataset.
+- Several clusters are enriched for genes such as **CR2, FDCSP, CLU, LRMP, and MEF2B**.
+- The dendrogram suggests **transcriptional similarity among subsets of clusters**.
+- Some clusters display strong multi-gene enrichment, indicating **distinct molecular identities**.
+- These patterns support **cluster annotation using canonical or candidate marker genes**.
+
 ## 14. Plot a marker gene in space
 
 A selected marker gene is visualized together with cluster labels to help interpret the biological identity of clusters.
+
+![Spatial Clusters and CR2](results/Basic%20Scanpy%20Spatial%20Analysis/7.%20Spatial%20Clusters%20and%20CR2.png)
+> *Figure 7. Spatial map of cluster assignments and CR2 expression across the tissue section, showing how marker expression relates to transcriptionally defined regions.*
+
+**Key observations**
+- CR2 expression is **spatially heterogeneous** across the tissue.
+- Higher CR2 signal appears in **specific cluster-associated regions**.
+- Expression is **localized rather than uniform**, suggesting cluster-restricted enrichment.
+- The comparison supports **marker-based cluster annotation**.
 
 ## 15. Plot additional genes in space
 
