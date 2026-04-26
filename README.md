@@ -377,6 +377,34 @@ A helper function is defined to cluster selected image features using scaling, P
 
 This final step clusters spots separately using summary, histogram, and texture features, and compares the resulting image-based clusters with the original transcriptomic clusters.
 
+![Features Clusters](results/Analyze%20Visium%20fluorescence%20data/6.%20Features%20Clusters.png)
+> *Figure 16. Spatial map of feature-based clusters derived from segmentation summary statistics, showing how image-derived phenotypes are distributed across the tissue section.*
+
+**Key observations**
+- Feature-based clusters form **spatially organized patterns** rather than random distributions.
+- Several clusters align with **distinct tissue regions**, indicating that segmentation-derived features capture biologically relevant structure.
+
+![Histogram Clusters](results/Analyze%20Visium%20fluorescence%20data/7.%20Histogram%20Clusters.png)
+> *Figure 17. Spatial distribution of clusters derived from histogram-based image features, highlighting regional variation in local intensity profiles across the tissue.*
+
+**Key observations**
+- Histogram-based clusters show **clear spatial structure**, indicating non-random variation in image texture and intensity distributions.
+- Distinct cluster neighborhoods suggest that **histogram features capture complementary tissue heterogeneity** beyond simple mean intensity measurements.
+
+![Texture Clusters](results/Analyze%20Visium%20fluorescence%20data/8.%20Texture%20Clusters.png)
+> *Figure 18. Spatial map of texture-based clusters derived from image features, revealing regional differences in local tissue appearance across the section.*
+
+**Key observations**
+- Texture-based clustering identifies **spatially coherent domains** across the tissue.
+- The observed patterns indicate that **local image texture captures biologically meaningful structural variation**.
+
+![Spatial Domains](results/Analyze%20Visium%20fluorescence%20data/9.%20Spatial%20Domains.png)
+> *Figure 19. Spatial domain map showing the anatomical organization of annotated regions across the tissue section.*
+
+**Key observations**
+- The tissue is partitioned into **distinct anatomical domains** with clear spatial boundaries.
+- Major regions such as the **cortex, hippocampus, thalamus, and striatum** display coherent large-scale organization.
+
 ---
 
 # Notebook 3: Analyze Visium H&E Data
