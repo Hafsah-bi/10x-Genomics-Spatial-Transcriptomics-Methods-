@@ -72,7 +72,7 @@ Histograms are used to inspect:
 
 These plots help choose appropriate filtering thresholds.
 
-![QC Histograms](![QC Histograms](results/Basic%20Scanpy%20Spatial%20Analysis/1.%20qc_histograms)
+![QC Histograms](![QC Histograms](https://github.com/Hafsah-bi/10x-Genomics-Spatial-Transcriptomics-Methods-/blob/main/results/Basic%20Scanpy%20Spatial%20Analysis/1.%20qc_histograms.png)
 > *Figure 1. Histograms of total counts and detected genes per spot/cell used for initial quality control assessment. Full-range and zoomed-in views are shown to highlight the overall distribution and potential filtering thresholds.*
 
 **Key observations**
