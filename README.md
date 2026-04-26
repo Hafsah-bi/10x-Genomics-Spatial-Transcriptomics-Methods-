@@ -72,6 +72,16 @@ Histograms are used to inspect:
 
 These plots help choose appropriate filtering thresholds.
 
+![QC Histograms](results/Basic Scanpy Spatial Analysis/1. qc_histograms.png)
+> *Figure 1. Histograms of total counts and detected genes per spot/cell used for initial quality control assessment. Full-range and zoomed-in views are shown to highlight the overall distribution and potential filtering thresholds.*
+
+**Key observations**
+- Total counts are centered around **~20,000 UMIs** for most observations.
+- Detected genes are concentrated around **~5,000–6,000 genes**.
+- Low-count and low-gene outliers are present, consistent with potential low-quality spots/cells.
+- The distributions are moderately right-skewed, with a subset of high-count observations.
+- These plots provide a basis for selecting **QC filtering cutoffs** prior to downstream analysis.
+
 ## 6. Filter spots and genes
 
 Low-quality spots and rarely detected genes are removed based on:
