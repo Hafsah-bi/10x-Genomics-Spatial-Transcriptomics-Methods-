@@ -140,9 +140,29 @@ QC-related features such as total counts and detected genes are visualized direc
 
 Cluster labels are overlaid on the tissue image to show how transcriptionally defined groups are arranged spatially.
 
+![Spatial clusters](results/Basic%20Scanpy%20Spatial%20Analysis/4.%20spatial_clusters.png)
+> *Figure 4. Spatial map of Leiden cluster assignments overlaid on the tissue image, showing the organization of transcriptionally distinct regions across the section.*
+
+**Key observations**
+- Clusters 0–9 show **clear spatial heterogeneity** across the tissue.
+- Several clusters form **coherent regional domains**.
+- Some cluster boundaries appear sharp, while others are **more intermixed**.
+- The observed pattern suggests **structured tissue organization** with potential biological regionalization.
+- These results support downstream **cluster annotation and marker identification**.
+
 ## 12. Zoom in on selected clusters
 
 Specific clusters are highlighted in a cropped tissue region to examine local spatial organization in more detail.
+
+![Spatial clusters zoom](results/Basic%20Scanpy%20Spatial%20Analysis/5.%20spatial_clusters_zoom.png)
+> *Figure 5. Zoomed-in spatial map showing selected cluster assignments and background spots within a local tissue region.*
+
+**Key observations**
+- Clusters **5** and **9** show **localized spatial structure**.
+- Cluster 5 is more broadly represented, while cluster 9 appears in **smaller discrete patches**.
+- **NA** spots are concentrated near non-tissue or excluded regions.
+- The panel highlights **fine-scale heterogeneity** within the tissue.
+- This view helps assess **local cluster organization** in histological context.
 
 ## 13. Find marker genes for clusters
 
