@@ -18,6 +18,10 @@ Main Python packages used:
 
 ---
 
+## File
+
+- `Basic Scanpy.ipynb`
+
 ## Overview
 
 The analysis includes:
@@ -29,6 +33,8 @@ The analysis includes:
 - running PCA, neighbors, UMAP, and Leiden clustering
 - visualizing clusters and gene expression in tissue space
 - identifying marker genes
+
+---
 
 ## 1. Import libraries
 
@@ -151,12 +157,6 @@ The same standard workflow is applied to the second dataset:
 The final results for the second dataset are visualized in:
 - UMAP space
 - spatial coordinate space
-
----
-
-## File
-
-- `Basic Scanpy.ipynb`
 
 ---
 
