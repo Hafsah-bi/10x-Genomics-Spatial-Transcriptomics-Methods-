@@ -646,6 +646,13 @@ Measures percentage of counts from negative control probes and codewords to asse
 
 Plots key QC distributions to inspect sequencing depth, gene diversity, segmentation size, and nucleus-to-cell area ratio.
 
+![Cell QC Metrics](results/Analyze%20Xenium%20data/1.%20Cell%20QC%20Metrics.png)
+> *Figure 25. Quality control distributions for segmented Xenium cells, showing transcript counts, gene complexity, cell area, and nucleus-to-cell area ratio.*
+
+**Key observations**
+- Transcript counts, unique genes, and cell area show **right-skewed distributions**, with most cells having moderate values and a smaller number of high-value outliers.
+- The nucleus ratio is concentrated in an **intermediate range**, suggesting relatively consistent segmentation quality across most cells.
+
 ### 11. Filter Cells and Genes
 
 Removes very low-count cells and rarely detected genes to reduce noise.
@@ -658,9 +665,23 @@ Stores raw counts, normalizes, log-transforms, reduces dimensionality, builds ne
 
 Plots cells in UMAP space colored by QC metrics and Leiden cluster labels.
 
+![UMAP and Cluster Embedding](results/Analyze%20Xenium%20data/4.%20UMAP%20and%20Cluster%20Embedding.png)
+> *Figure 26. UMAP visualization of Xenium cells colored by total transcript counts, detected genes, and Leiden clusters, summarizing transcriptional variation and cluster structure.*
+
+**Key observations**
+- The embedding reveals **well-separated transcriptional clusters**, indicating substantial cellular heterogeneity in the dataset.
+- Total counts and detected genes vary across the UMAP, showing that **QC-related metrics are not uniformly distributed** and may differ by cluster.
+
 ### 14. Plot Spatial Clusters
 
 Shows how Leiden clusters are distributed across the tissue section.
+
+![Spatial Leiden Clusters](results/Analyze%20Xenium%20data/2.%20Spatial%20Leiden%20Clusters.png)
+> *Figure 27. Spatial map of Xenium cells colored by Leiden cluster identity, illustrating how transcriptionally defined groups are arranged across the tissue section.*
+
+**Key observations**
+- Clusters are **spatially structured rather than randomly mixed**, with several regions enriched for specific Leiden identities.
+- Some clusters form **broad continuous domains**, while others appear more interspersed, suggesting both regional specialization and local heterogeneity.
 
 ### 15. Build Spatial Neighbor Graph
 
@@ -673,6 +694,13 @@ Calculates graph-based centrality measures for each Leiden cluster.
 ### 17. Plot Centrality Scores
 
 Visualizes spatial centrality metrics across all clusters.
+
+![Cluster Centrality Metrics](results/Analyze%20Xenium%20data/3.%20Cluster%20Centrality%20Metrics.png)
+> *Figure 28. Comparison of graph-based centrality measures across Leiden clusters, including average clustering, closeness centrality, and degree centrality.*
+
+**Key observations**
+- Leiden clusters differ noticeably in **closeness and degree centrality**, indicating unequal roles in the inferred cellular interaction network.
+- Average clustering varies over a **narrower range** than the other metrics, suggesting local neighborhood connectivity is relatively consistent across clusters.
 
 ### 18. Create a Subsample
 
