@@ -72,7 +72,7 @@ Histograms are used to inspect:
 
 These plots help choose appropriate filtering thresholds.
 
-(![QC Histograms](https://github.com/Hafsah-bi/10x-Genomics-Spatial-Transcriptomics-Methods-/blob/main/results/Basic%20Scanpy%20Spatial%20Analysis/1.%20qc_histograms.png)
+![QC Histograms](https://github.com/Hafsah-bi/10x-Genomics-Spatial-Transcriptomics-Methods-/blob/main/results/Basic%20Scanpy%20Spatial%20Analysis/1.%20qc_histograms.png)
 > *Figure 1. Histograms of total counts and detected genes per spot/cell used for initial quality control assessment. Full-range and zoomed-in views are shown to highlight the overall distribution and potential filtering thresholds.*
 
 **Key observations**
@@ -110,6 +110,16 @@ The notebook performs:
 UMAP plots show the distribution of spots in low-dimensional space and allow comparison between:
 - QC features
 - cluster assignments
+
+![UMAP plots](results/Basic%20Scanpy%20Spatial%20Analysis/2.%20umap%20plots.png)
+> *Figure 2. UMAP embedding colored by total counts, detected genes, and cluster identity to assess quality control trends and transcriptional heterogeneity across the dataset.*
+
+**Key observations**
+- The embedding shows **multiple distinct clusters** with clear separation in UMAP space.
+- Total counts and detected genes display **broad gradients** across the embedding.
+- Regions with higher total counts generally also show **higher gene complexity**.
+- The clustering identifies **10 transcriptionally distinct groups**.
+- The overall structure suggests **biological heterogeneity** rather than purely technical variation.
 
 ## 10. Plot QC features in tissue space
 
