@@ -714,6 +714,13 @@ Stores the subsampled dataset in a separate variable for subsequent steps.
 
 Computes and plots how often clusters appear near one another spatially, then visualizes cluster positions in tissue space.
 
+![Co-Occurrence by Distance](results/Analyze%20Xenium%20data/6.%20Co-Occurrence%20by%20Distance.png)
+> *Figure 29. Distance-dependent co-occurrence profile for Leiden clusters, showing how spatial enrichment around a reference cluster changes with increasing separation.*
+
+**Key observations**
+- One cluster shows **strong short-range enrichment**, with co-occurrence highest at small distances and rapidly decreasing as distance increases.
+- Most cluster profiles **converge toward a common baseline** at larger distances, indicating that spatial associations are primarily local rather than long range.
+
 ### 21. Neighborhood Enrichment
 
 Tests whether certain clusters are spatially enriched or depleted in each other's neighborhoods.
@@ -721,6 +728,13 @@ Tests whether certain clusters are spatially enriched or depleted in each other'
 ### 22. Plot Neighborhood Enrichment
 
 Displays neighborhood enrichment heatmap alongside spatial distribution of clusters.
+
+![Neighborhood Enrichment](results/Analyze%20Xenium%20data/7.%20Neighborhood%20Enrichment.png)
+> *Figure 30. Neighborhood enrichment heatmap and spatial cluster map showing preferential adjacency patterns among Leiden-defined cell populations in the Xenium tissue section.*
+
+**Key observations**
+- Strong **diagonal enrichment** indicates that several Leiden clusters preferentially neighbor cells of the same cluster, consistent with spatial self-organization.
+- Off-diagonal enrichment patterns reveal **selective inter-cluster associations**, suggesting structured local interactions between distinct cellular neighborhoods.
 
 ### 23. Spatial Autocorrelation
 
@@ -730,9 +744,23 @@ Computes Moran's I statistic to identify genes with spatially patterned expressi
 
 Plots spatial expression of selected genes to inspect where they localize in the tissue.
 
+![Spatial Expression of AGER and MET](results/Analyze%20Xenium%20data/8.%20Spatial%20Expression%20of%20AGER%20and%20MET.png)
+> *Figure 31. Spatial expression maps of AGER and MET across the Xenium tissue section, highlighting differences in gene localization patterns.*
+
+**Key observations**
+- **AGER expression is sparse and low** across most of the tissue, with little evidence of broad regional enrichment.
+- **MET shows more spatially variable signal**, with localized patches of higher expression indicating region-specific transcriptional activity.
+
 ### 25. Reload Data and Plot Genes One by One
 
 Reloads Xenium data with cells represented as circles and plots each selected gene individually if present in the dataset.
+
+![Spatial Counts of AGER and MET](results/Analyze%20Xenium%20data/9.%20Spatial%20Counts%20of%20AGER%20and%20MET.png)
+> *Figure 32. Spatial count maps of AGER and MET transcripts across the Xenium tissue section, showing absolute gene-specific detection patterns.*
+
+**Key observations**
+- **AGER transcript counts are very low and sparse** across the section, indicating limited expression in most cells.
+- **MET has higher and more regionally concentrated counts**, with localized hotspots that suggest spatially restricted expression domains.
 
 ## References
 
