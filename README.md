@@ -125,6 +125,17 @@ UMAP plots show the distribution of spots in low-dimensional space and allow com
 
 QC-related features such as total counts and detected genes are visualized directly on the tissue image to identify spatial quality patterns.
 
+![Spatial counts](results/Basic%20Scanpy%20Spatial%20Analysis/3.%20spatial%20counts.png)
+> *Figure 3. Spatial maps of total counts and detected genes overlaid on the tissue image, illustrating how sequencing depth and transcript complexity vary across the section.*
+
+**Key observations**
+- Total counts and detected genes exhibit **clear spatial heterogeneity** across the tissue.
+- Areas with higher counts generally show **higher gene complexity**.
+- A central low-signal region is visible in both panels.
+- The shared spatial pattern suggests that **UMI abundance and detected genes are strongly correlated**.
+- These plots help identify **regions that may require QC consideration** before downstream analysis.
+
+
 ## 11. Plot clusters in tissue space
 
 Cluster labels are overlaid on the tissue image to show how transcriptionally defined groups are arranged spatially.
