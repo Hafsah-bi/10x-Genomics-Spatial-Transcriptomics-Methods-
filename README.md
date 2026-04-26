@@ -331,6 +331,179 @@ This plot visualizes selected spatially variable genes together with the cluster
 
 ---
 
+# Notebook 4: Xenium Spatial Transcriptomics Analysis
+
+This notebook analyzes end-to-end spatial transcriptomics pipeline on 10x Genomics Xenium data. Covers QC, normalization, clustering, and spatial analysis — neighborhood enrichment, co-occurrence, and spatially variable gene detection — using `spatialdata`, `scanpy`, and `squidpy`.
+
+---
+
+## Overview
+
+1. Mount Google Drive
+2. Import Libraries
+3. Set File Paths
+4. Load Xenium Data
+5. Extract AnnData Table
+6. View Cell Metadata
+7. View Spatial Coordinates
+8. Compute QC Metrics
+9. Check Negative Controls
+10. Plot QC Distributions
+11. Filter Cells and Genes
+12. Normalize and Cluster
+13. Visualize UMAP
+14. Plot Spatial Clusters
+15. Build Spatial Neighbor Graph
+16. Compute Centrality Scores
+17. Plot Centrality Scores
+18. Create a Subsample
+19. Access the Subsample
+20. Co-occurrence Analysis
+21. Neighborhood Enrichment
+22. Plot Neighborhood Enrichment
+23. Spatial Autocorrelation
+24. Plot Selected Genes Spatially
+25. Reload Data and Plot Genes One by One.
+
+---
+
+## Dataset Description
+
+10x Genomics **Xenium in situ** dataset with subcellular spatial transcriptomics at single-cell resolution. Includes:
+
+- Cell-by-gene expression matrix with targeted gene panel counts
+- Spatial coordinates of segmented cell centroids in tissue space
+- Cell metadata — cell area, nucleus area, transcript counts, control counts
+- Negative control probes and codewords for background noise estimation
+
+Stored in Xenium output directory format, loaded via `spatialdata-io` into a `SpatialData` object.
+
+---
+
+## Requirements
+
+### Environment
+
+Runs in **Google Colab** with Google Drive mounted. Dataset placed at `/content/drive/MyDrive/Xenium`.
+
+### Dependencies
+
+```bash
+pip install spatialdata spatialdata-io scanpy squidpy matplotlib seaborn
+```
+
+### Package Roles
+
+- `spatialdata` — unified spatial data container
+- `spatialdata-io` — Xenium format reader
+- `scanpy` — QC, normalization, clustering
+- `squidpy` — spatial graph construction and spatial statistics
+- `matplotlib` / `seaborn` — visualization
+
+---
+
+## Workflow
+
+### 1. Mount Google Drive
+
+Mounts Google Drive in Colab so the Xenium dataset can be loaded from Drive.
+
+### 2. Import Libraries
+
+Imports packages needed for data loading, QC, preprocessing, clustering, plotting, and spatial analysis.
+
+### 3. Set File Paths
+
+Defines path to the Xenium dataset directory.
+
+### 4. Load Xenium Data
+
+Loads Xenium output into a **SpatialData** object containing spatial elements and the expression table.
+
+### 5. Extract AnnData Table
+
+Retrieves the main cell-by-gene expression table as an **AnnData** object.
+
+### 6. View Cell Metadata
+
+Shows per-cell metadata such as transcript counts, cell area, and control counts.
+
+### 7. View Spatial Coordinates
+
+Displays spatial coordinates for each cell, used in spatial plots and graph construction.
+
+### 8. Compute QC Metrics
+
+Calculates standard QC metrics like total counts and number of detected genes per cell.
+
+### 9. Check Negative Controls
+
+Measures percentage of counts from negative control probes and codewords to assess background noise.
+
+### 10. Plot QC Distributions
+
+Plots key QC distributions to inspect sequencing depth, gene diversity, segmentation size, and nucleus-to-cell area ratio.
+
+### 11. Filter Cells and Genes
+
+Removes very low-count cells and rarely detected genes to reduce noise.
+
+### 12. Normalize and Cluster
+
+Stores raw counts, normalizes, log-transforms, reduces dimensionality, builds neighbor graph, computes UMAP, and identifies clusters via Leiden algorithm.
+
+### 13. Visualize UMAP
+
+Plots cells in UMAP space colored by QC metrics and Leiden cluster labels.
+
+### 14. Plot Spatial Clusters
+
+Shows how Leiden clusters are distributed across the tissue section.
+
+### 15. Build Spatial Neighbor Graph
+
+Creates a spatial graph from cell coordinates using Delaunay triangulation.
+
+### 16. Compute Centrality Scores
+
+Calculates graph-based centrality measures for each Leiden cluster.
+
+### 17. Plot Centrality Scores
+
+Visualizes spatial centrality metrics across all clusters.
+
+### 18. Create a Subsample
+
+Creates a random 50% subset of cells for faster downstream spatial analyses.
+
+### 19. Access the Subsample
+
+Stores the subsampled dataset in a separate variable for subsequent steps.
+
+### 20. Co-occurrence Analysis
+
+Computes and plots how often clusters appear near one another spatially, then visualizes cluster positions in tissue space.
+
+### 21. Neighborhood Enrichment
+
+Tests whether certain clusters are spatially enriched or depleted in each other's neighborhoods.
+
+### 22. Plot Neighborhood Enrichment
+
+Displays neighborhood enrichment heatmap alongside spatial distribution of clusters.
+
+### 23. Spatial Autocorrelation
+
+Computes Moran's I statistic to identify genes with spatially patterned expression across the tissue.
+
+### 24. Plot Selected Genes Spatially
+
+Plots spatial expression of selected genes to inspect where they localize in the tissue.
+
+### 25. Reload Data and Plot Genes One by One
+
+Reloads Xenium data with cells represented as circles and plots each selected gene individually if present in the dataset.
+
 ## References
 
 [Scanpy spatial tutorial](https://scanpy-tutorials.readthedocs.io/en/latest/spatial/basic-analysis.html)
