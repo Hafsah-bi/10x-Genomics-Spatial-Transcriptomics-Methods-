@@ -311,19 +311,59 @@ This step imports the required libraries and loads the image and AnnData objects
 
 This plot shows the annotated transcriptomic clusters in their spatial tissue coordinates.
 
+![Domain Map](results/Analyze%20Visium%20fluorescence%20data/1.%20Domain%20Map.png)
+> *Figure 11. Spatial domain map showing annotated anatomical regions across the tissue section based on cluster identities.*
+
+**Key observations**
+- Distinct brain regions such as **cortex, hippocampus, thalamus, and striatum** are clearly separated in space.
+- Several domains form **well-defined contiguous areas**, consistent with underlying anatomical organization.
+- The map highlights the correspondence between **spatial clustering and tissue architecture**.
+
 ## 3. Show fluorescence channels
 
 This visualization displays the individual fluorescence channels separately.
+
+![Image Channels](results/Analyze%20Visium%20fluorescence%20data/2.%20Image%20Channels.png)
+> *Figure 12. Visualization of the three fluorescence image channels used for spatial analysis, showing channel-specific signal intensity patterns across the tissue section.*
+
+**Key observations**
+- The three channels show **distinct signal distributions**, capturing complementary tissue features.
+- Structural boundaries are visible across channels, with some regions appearing **more prominent in specific channels**.
+- These images provide the **fluorescence context for downstream spatial domain analysis**.
 
 ## 4. Smooth and segment the image
 
 The image is first smoothed to reduce noise, then watershed segmentation is applied on channel 0.  
 A cropped region is displayed to compare the raw image and segmentation result.
 
+![Watershed Segmentation](results/Analyze%20Visium%20fluorescence%20data/3.%20Watershed%20Segmentation.png)
+> *Figure 13. Comparison of the original fluorescence image and the corresponding watershed-based segmentation used to identify individual objects.*
+
+**Key observations**
+- The watershed result separates the image into **discrete segmented objects** corresponding to bright signal regions.
+- Most high-intensity spots in the original image are captured as **individual segmented regions**.
+- This segmentation provides the basis for **quantifying object-level spatial features**.
+
 ## 5. Extract segmentation features
 
 Segmentation-based features are computed for each spot using the segmented image.  
 These features can then be compared with gene-expression-based clusters.
+
+![Labels and Domains](results/Analyze%20Visium%20fluorescence%20data/4.%20Labels%20and%20Domains.png)
+> *Figure 14. Comparison of segmentation labels and annotated spatial domains across the tissue section, linking image-derived regions to anatomical cluster identities.*
+
+**Key observations**
+- The segmentation labels define **localized regions** that align with visible tissue structures.
+- The domain map shows **distinct anatomical areas** such as cortex, hippocampus, and thalamus.
+- Together, the panels connect **image segmentation with biologically meaningful spatial annotation**.
+
+![Segment Intensities](results/Analyze%20Visium%20fluorescence%20data/5.%20Segment%20Intensities.png)
+> *Figure 15. Spatial distribution of mean segmentation intensities for two fluorescence channels, showing how signal strength varies across tissue locations.*
+
+**Key observations**
+- Both channels display **region-specific intensity patterns** rather than uniform signal across the tissue.
+- High-intensity areas trace **anatomically structured features**, including curved tissue boundaries.
+- The comparison highlights **channel-dependent differences in spatial signal enrichment**.
 
 ## 6. Extract multi-scale image features
 
