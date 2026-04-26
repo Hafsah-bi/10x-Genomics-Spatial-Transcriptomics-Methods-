@@ -18,10 +18,6 @@ Main Python packages used:
 
 ---
 
-## File
-
-- `Basic Scanpy.ipynb`
-
 ## Overview
 
 The analysis includes:
