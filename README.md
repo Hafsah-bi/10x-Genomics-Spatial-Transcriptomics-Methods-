@@ -19,6 +19,17 @@ result
 README.md                      
 ```
 
+## 📓 Notebooks
+
+| Notebook | Description | Open |
+|----------|-------------|------|
+| 1. Basic Scanpy Spatial Analysis | Intro spatial analysis with Scanpy | [▶ Open](https://drive.google.com/file/d/1i_--OCMjp8K68Hx4nBJ5qpiWf4DqZSpn/view?usp=drive_link) |
+| 2. Analyze Visium Fluorescence Data | Fluorescence-based Visium workflow | [▶ Open](https://drive.google.com/file/d/1iBgalraFHTNBDvrX4OY-s_URktDwze6b/view?usp=drive_link) |
+| 3. Analyze Visium H&E Data | H&E staining Visium analysis | [▶ Open](https://drive.google.com/file/d/1K7bCy3DExFoDCWPVw3wR8ogjuHaIK14h/view?usp=drive_link) |
+| 4. Analyze Xenium Data | Xenium platform spatial analysis | [▶ Open](https://drive.google.com/file/d/1vYt0p_egf2YJTZ-TEVo_sFzIgJ-SE_D9/view?usp=drive_link) |
+
+---
+
 # Notebook 1: Basic Scanpy Spatial Analysis
 
 This notebook demonstrates a basic **spatial transcriptomics workflow** in **Scanpy**. It first analyzes a **10x Visium human lymph node** dataset and then applies a similar workflow to a second dataset with manually added spatial coordinates.
